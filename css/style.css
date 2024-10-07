@@ -1,0 +1,22 @@
+/* DEFAULT RULES */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Red Hat Text', sans-serif;
+    background-color: #fcf8f6;
+}
+
+.container {
+    margin: 0 auto;
+    max-width: 1400px;
+}
+
+.content {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+}
