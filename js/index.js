@@ -32,7 +32,7 @@ const displayData = (data) => {
                         ${product.name}
                     </h2>
                     <p class="product-price">
-                        ${product.price.toFixed(2)}
+                        $${product.price.toFixed(2)}
                     </p>
                 </div>
             </div>

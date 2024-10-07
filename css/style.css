@@ -20,3 +20,110 @@ body {
     justify-content: space-between;
     gap: 30px;
 }
+
+/* CARD */
+#data-container {
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    gap: 25px;
+}
+.title {
+    font-size: 4rem;
+    font-weight: 600;
+}
+
+p {
+    margin-bottom: 0;
+}
+
+.desserts-image {
+    max-width: 300px;
+    position: relative;
+    border-radius: 10px;
+}
+
+.dessert-info {
+    padding-top: 30px;
+}
+
+.card-products {
+    position: relative;
+}
+
+.card-button-container {
+    position: absolute;
+    bottom: 70px;
+    left: 70px;
+}
+
+.card-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    border: 1px solid #601c05;
+    background-color: #fff;
+    width: 150px;
+    padding: 8px 10px;
+    border-radius: 50px;
+}
+
+.card-button:hover {
+    border: 1px solid #ca3b0d;
+    color: #ca3b0d;
+}
+
+.card-text {
+    margin-bottom: 0;
+}
+
+.product-category {
+    color: #c6b0a9;
+    font-size: 0.8rem;
+}
+
+.product-name {
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.product-price {
+    color: #b23515;
+    font-size: 0.95rem;
+    font-weight: 600;
+}
+
+/* FOOTER */
+.attribution {
+    font-size: 11px;
+    text-align: center;
+}
+
+.attribution a {
+    color: hsl(228, 45%, 44%);
+}
+
+/* CART */
+.cart-container {
+    background-color: #fff;
+    height: 300px;
+    padding: 20px;
+    width: 350px;
+    border-radius: 8px;
+    margin-top: 20px;
+    text-align: center;
+}
+
+.cart-title {
+    color: #b23515;
+    text-align: left;
+}
+
+.cart-image {
+    padding: 20px;
+}
+
+.cart-info {
+    color: #b18f8b;
+    font-size: 0.9rem;
+}
