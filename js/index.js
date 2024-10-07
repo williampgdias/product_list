@@ -46,4 +46,23 @@ const displayData = (data) => {
         `;
         container.appendChild(div);
     });
+
+    addItemsToCart();
 };
+
+function addItemsToCart() {
+    const addCartButton = document.querySelectorAll('.card-button-container');
+
+    addCartButton.forEach((button) => {
+        button.addEventListener('click', () => {
+            incrementCart();
+        });
+    });
+}
+
+function incrementCart() {
+    const incrementButton = document.getElementById('cart-number');
+    let currentCount = parseInt(incrementButton.innerHTML) || 0;
+    currentCount++;
+    incrementButton.innerHTML = currentCount;
+}
