@@ -51,10 +51,13 @@ const displayData = (data) => {
 };
 
 function addItemsToCart() {
-    const addCartButton = document.querySelectorAll('.card-button-container');
+    const addCartButtons = document.querySelectorAll('.card-button-container');
 
-    addCartButton.forEach((button) => {
+    addCartButtons.forEach((buttonContainer) => {
+        const button = buttonContainer.querySelector('.card-button');
+
         button.addEventListener('click', () => {
+            replaceButton(buttonContainer);
             incrementCart();
         });
     });
@@ -65,4 +68,51 @@ function incrementCart() {
     let currentCount = parseInt(incrementButton.innerHTML) || 0;
     currentCount++;
     incrementButton.innerHTML = currentCount;
+}
+
+function decrementCart() {
+    const decrementButton = document.getElementById('cart-number');
+    let currentCount = parseInt(decrementButton.innerHTML) || 0;
+    currentCount--;
+    decrementButton.innerHTML = currentCount;
+}
+
+// Function to replace the "add to cart" button with another button
+function replaceButton(buttonContainer) {
+    const quantityButton = document.createElement('div');
+    quantityButton.classList.add('item-cart-container');
+    quantityButton.innerHTML = `
+        <div class="item-cart">
+            <img class='btn-quantity decrement-quantity' src="../assets/images/icon-decrement-quantity.svg">
+            <p class="cart-quantity">1</p>
+            <img class='btn-quantity increment-quantity' src="../assets/images/icon-increment-quantity.svg">
+        </div>
+    `;
+
+    // Replace the old button with a new component
+    buttonContainer.replaceWith(quantityButton);
+
+    const incrementButton = quantityButton.querySelector('.increment-quantity');
+    const decrementButton = quantityButton.querySelector('.decrement-quantity');
+    const quantitySpan = quantityButton.querySelector('.cart-quantity');
+
+    let quantity = 1;
+
+    incrementButton.addEventListener('click', () => {
+        quantity++;
+        quantitySpan.textContent = quantity;
+        incrementCart();
+    });
+
+    decrementButton.addEventListener('click', () => {
+        if (quantity > 0) {
+            quantity--;
+            quantitySpan.textContent = quantity;
+            decrementCart();
+        }
+
+        if (quantity === 0) {
+            quantityButton.replaceWith(buttonContainer);
+        }
+    });
 }
