@@ -19,10 +19,17 @@ const displayData = (data) => {
     data.forEach((product) => {
         const div = document.createElement('div');
         div.innerHTML = `
-            <div class="products-container">
+            <div class="products-container card-products">
                 <div class="cards-container">
                     <img class="desserts-image" src=${product.image.desktop}>
                 </div>
+
+                <span class="card-button-container">
+                    <button class="card-button">
+                        <img src="../assets/images/icon-add-to-cart.svg">
+                        <p class="card-text">Add to cart</p>
+                    </button>
+                </span>
                 
                 <div class="dessert-info">
                     <p class="product-category">

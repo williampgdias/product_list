@@ -66,6 +66,7 @@ p {
     width: 150px;
     padding: 8px 10px;
     border-radius: 50px;
+    cursor: pointer;
 }
 
 .card-button:hover {
@@ -110,7 +111,6 @@ p {
     padding: 20px;
     width: 350px;
     border-radius: 8px;
-    margin-top: 20px;
     text-align: center;
 }
 
